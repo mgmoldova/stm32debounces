@@ -33,11 +33,11 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-		if(HAL_GPIO_ReadPin(GPIOC,GPIO_PIN_13) == 0 ) //if built-in button pressed
+		if(HAL_GPIO_ReadPin(GPIOC,GPIO_PIN_13) == GPIO_PIN_SET ) //if built-in button pressed
 		{
 			HAL_Delay(50);
 			state ^= 1;
-			while(HAL_GPIO_ReadPin(GPIOC,GPIO_PIN_13) == 0 )
+			while(HAL_GPIO_ReadPin(GPIOC,GPIO_PIN_13) == GPIO_PIN_SET )
 			{
 				if(state == 1)
 					HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET);
