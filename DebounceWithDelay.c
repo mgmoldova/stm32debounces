@@ -29,11 +29,11 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-	int state = 0;
+  int state = 0;
   while (1)
   {
     /* USER CODE END WHILE */
-		if(HAL_GPIO_ReadPin(GPIOC,GPIO_PIN_13) == 0 )
+		if(HAL_GPIO_ReadPin(GPIOC,GPIO_PIN_13) == 0 ) //if built-in button pressed
 		{
 			HAL_Delay(50);
 			state ^= 1;
@@ -45,9 +45,6 @@ int main(void)
 					HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);
 			}						
 		}
-		
-
-		//HAL_Delay(3000);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
